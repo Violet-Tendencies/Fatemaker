@@ -16,7 +16,7 @@
 --     eternal_compat = true,
 --     perishable_compat = true,
 --     unlocked = true,
---     discovered = true,
+--     discovered = false,
 --     pos = {x=0, y=0},
 --     calculate = function(self, card, context)
 --         if context.joker_main then
@@ -64,7 +64,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=1},
     config = {
         extra = {
@@ -183,7 +183,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=1},
     config = {
         extra = {
@@ -308,7 +308,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=1},
     config = {
         extra = {
@@ -441,7 +441,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=1},
     config = {
         extra = {
@@ -567,7 +567,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     config = {
         extra = {
             charge = 0,
@@ -749,7 +749,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=1},
     config = {
         extra = {
@@ -847,7 +847,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=6, y=1},
     config = {
         extra = {
@@ -1005,7 +1005,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=7, y=1},
     config = {
         extra = {
@@ -1095,7 +1095,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=8, y=1},
     config = {
         extra = {
@@ -1212,7 +1212,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=9, y=1},
     config = {
         extra = {
@@ -1384,7 +1384,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=10, y=1},
     config = {
         extra = {
@@ -1507,7 +1507,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=2},
     config = {
         extra = {
@@ -1692,7 +1692,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=2},
     config = {
         extra = {
@@ -1856,7 +1856,7 @@ SMODS.Joker{
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=2},
     soul_pos = {x=10, y=2},
     config = {
@@ -2089,7 +2089,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=3},
     config = { 
         extra = { 
@@ -2166,7 +2166,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=3},
     config = {
         {
@@ -2230,7 +2230,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=3},
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -2280,7 +2280,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=3},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -2352,7 +2352,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=3},
     config = {
         extra = {
@@ -2412,7 +2412,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=3},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -2504,7 +2504,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=4},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -2563,7 +2563,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=4},
     calculate = function(self, card, context)
         local count = 0
@@ -2627,7 +2627,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=4},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -2674,7 +2674,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=4},
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and not context.end_of_round then
@@ -2717,7 +2717,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=4},
     calculate = function(self, card, context)
         if context.post_joker then
@@ -2773,7 +2773,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=4},
     calculate = function(self, card, context)
         if context.cardarea == G.play and context.repetition and not context.repetition_only then
@@ -2813,7 +2813,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=5},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -2867,7 +2867,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=5},
     calculate = function(self, card, context)
         if context.before then
@@ -2906,7 +2906,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=5},
     calculate = function(self, card, context)
         if context.after then
@@ -2967,7 +2967,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=5},
     calculate = function(self, card, context)
         if context.after then
@@ -3008,7 +3008,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=5},
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -3048,7 +3048,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=5},
     config = { 
         extra = { 
@@ -3098,7 +3098,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=6},
     config = {
         extra = {
@@ -3187,7 +3187,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=6},
     add_to_deck = function(self, card, from_debuff)
         for _, handCard in ipairs(G.hand.cards) do
@@ -3273,7 +3273,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=6},
     calculate = function(self, card, context)
         if context.cardarea == G.play and context.repetition and not context.repetition_only then
@@ -3319,7 +3319,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=6},
     config = {
         extra = {
@@ -3372,7 +3372,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=6},
     config = {
         extra = {
@@ -3439,7 +3439,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=6},
     config = {
         extra = {
@@ -3512,7 +3512,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=7},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -3548,7 +3548,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=7},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -3590,7 +3590,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=7},
     calculate = function(self, card, context)
         for _, joker in ipairs(G.jokers.cards) do
@@ -3649,7 +3649,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=7},
     config = {
         extra = {
@@ -3697,7 +3697,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=7},
     add_to_deck = function(self, card, from_debuff)
         for _, handCard in ipairs(G.hand.cards) do
@@ -3744,7 +3744,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=7},
     calculate = function(self, card, context)
         if context.after and context.scoring_hand  then
@@ -3804,7 +3804,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=8},
     config = {
         extra = {
@@ -3876,7 +3876,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=8},
     calculate = function(self, card, context)
         if context.after and context.scoring_hand and context.scoring_name ~= "High Card" then
@@ -3971,7 +3971,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=8},
     calculate = function(self, card, context)
 
@@ -3995,7 +3995,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=3, y=8},
     config = {
         extra = {
@@ -4039,7 +4039,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=8},
     add_to_deck = function(self, card, from_debuff)
         G.hand:change_size(-1)
@@ -4066,7 +4066,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=5, y=8},
     calculate = function(self, card, context)
 
@@ -4092,7 +4092,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=9},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -4235,7 +4235,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=2, y=10},
     calculate = function(self, card, context)
         if context.modify_hand then
@@ -4280,7 +4280,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=9, y=9},
     calculate = function(self, card, context)
         local Solarr = 0
@@ -4329,7 +4329,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=0, y=10},
     calculate = function(self, card, context)
         if context.joker_main then
@@ -4375,7 +4375,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=1, y=9},
     config = {
         extra = {
@@ -4464,7 +4464,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=8, y=1},
     calculate = function(self, card, context)
         local buffedHand = 0
@@ -4510,7 +4510,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=4, y=9}, -- Void position, arc position is x = 5 and solar position is x = 6
     config = {
         extra = {
@@ -4565,7 +4565,7 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     pos = {x=6, y=1},
     calculate = function(self, card, context)
         if context.before then 

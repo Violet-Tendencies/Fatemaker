@@ -13,7 +13,7 @@ SMODS.Edition({
     sound = { sound = "fm_arcstrider" },
     disable_shadow = true,
     disable_base_shader = true,
-    discovered = true,
+    discovered = false,
     unlocked = true,
     config = {},
     in_shop = false,

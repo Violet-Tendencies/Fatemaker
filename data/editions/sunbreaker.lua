@@ -13,7 +13,7 @@ SMODS.Edition({
     sound = { sound = "fm_sunbreaker" },
     disable_shadow = false,
     disable_base_shader = false,
-    discovered = true,
+    discovered = false,
     unlocked = true,
     config = {},
     in_shop = false,

@@ -40,10 +40,10 @@ SMODS.Edition({
     on_remove = function(card)
         card.children.particles:remove()
     end,
-    discovered = true,
+    discovered = false,
     unlocked = true,
     config = {},
-    in_shop = true,
+    in_shop = false,
     weight = 3,
     apply_to_float = true,
     loc_vars = function(self)

@@ -28,6 +28,134 @@ SMODS.Consumable {
 }
 
 SMODS.Consumable {
+    key = 'opening_shot',
+    loc_txt = {
+        name = "Opening Shot",
+        text = {
+            "The first card you play next",
+            "hand will be retriggered once."
+        }
+    },
+    atlas = 'Consumables',
+    set = 'traits',
+    discovered = false,
+    pos = { x = 2, y = 1 },
+    calculate = function (self, card, context)
+        if context.repetition and context.cardarea == G.play and context.other_card == context.scoring_hand[1] then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.5,
+                func = function()
+                    card:start_dissolve()
+                    return true
+                    end
+            }))
+            return {
+                repetitions = 1
+            }
+        end
+    end
+}
+
+SMODS.Consumable {
+    key = 'discord',
+    loc_txt = {
+        name = "Discord",
+        text = {
+            "Grant a random seal to the",
+            "first card in hand with a suit",
+            "that wasn't scored last round."
+        }
+    },
+    config = {
+        extra = {
+            suits = {}
+        }
+    },
+    atlas = 'Consumables',
+    set = 'traits',
+    discovered = false,
+    pos = { x = 2, y = 1 },
+    calculate = function (self, card, context)
+        if context.final_scoring_step then
+            for k, v in ipairs(G.play.cards) do
+                card.ability.extra.suits[#card.ability.extra.suits+1] = v.base.suit
+            end
+        end
+    end,
+    use = function(self, card, area, copier)
+        for k, v in ipairs(G.hand.cards) do
+            local y = true
+            for j, u in ipairs(card.ability.extra.suits) do
+                if v.base.suit == u then
+                    y = false
+                end
+            end
+            if y == true then
+                v:set_seal(SMODS.poll_seal({key = "fm_discord_poll", guaranteed = true}))
+                break
+            end
+        end
+    end,
+    can_use = function(self, card)
+        return G.consumeables and #card.ability.extra.suits > 0
+    end
+}
+
+SMODS.Consumable {
+    key = 'quickdraw',
+    loc_txt = {
+        name = "Quickdraw",
+        text = {
+            "Draw 3 cards"
+        }
+    },
+    atlas = 'Consumables',
+    set = 'traits',
+    discovered = false,
+    pos = { x = 2, y = 1 },
+    use = function(self, card, area, copier)
+        for i = 1, 3 do
+            G.E_MANAGER:add_event(Event({
+                func = function() 
+                    draw_card(G.deck, G.hand, 90, 'up', nil)
+                    return true 
+                end
+            }))
+
+        end
+    end,
+    can_use = function(self, card)
+        return G.consumeables and G.GAME.blind.in_blind
+    end
+}
+
+SMODS.Consumable {
+    key = 'mulligan',
+    loc_txt = {
+        name = "Mulligan",
+        text = {
+            "Discard all selected cards",
+            "draw the amount discarded"
+        }
+    },
+    atlas = 'Consumables',
+    set = 'traits',
+    discovered = false,
+    pos = { x = 2, y = 1 },
+    use = function(self, card, area, copier)
+        local amt = #G.hand.highlighted
+        G.FUNCS.discard_cards_from_highlighted()
+        for i = 1, amt do
+            draw_card(G.deck, G.hand, 90, 'up', nil)
+        end
+    end,
+    can_use = function(self, card)
+        return G.consumeables and #G.hand.highlighted > 0
+    end
+}
+
+SMODS.Consumable {
     key = 'vivisection',
     loc_txt = {
         name = "Vivisection",
