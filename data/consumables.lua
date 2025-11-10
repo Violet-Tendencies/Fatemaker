@@ -8,6 +8,7 @@ SMODS.Consumable {
     },
     set = 'traits',
     atlas = 'Consumables',
+    discovered = false,
     pos = { x = 4, y = 0 },
     use = function(self, card, area, copier)
         local odds = {
@@ -37,6 +38,7 @@ SMODS.Consumable {
     },
     set = 'traits',
     atlas = 'Consumables',
+    discovered = false,
     pos = { x = 6, y = 0 },
     use = function(self, card, area, copier)
         local _cards = {}
@@ -87,6 +89,7 @@ SMODS.Consumable {
         }
     },
     atlas = 'Consumables',
+    discovered = false,
     set = 'traits',
     pos = { x = 3, y = 0 },
     use = function(self, card, area, copier)
@@ -131,6 +134,7 @@ SMODS.Consumable {
     },
     atlas = 'Consumables',
     set = 'traits',
+    discovered = false,
     pos = { x = 7, y = 0 },
     use = function(self, card, area, copier)
         for i = 1, #G.hand.highlighted do
@@ -148,6 +152,163 @@ SMODS.Consumable {
 }
 
 SMODS.Consumable {
+    key = 'reconstruction',
+    loc_txt = {
+        name = "Reconstruction",
+        text = {
+            "Draw 1 card for each",
+            "hand played this round"
+        }
+    },
+    discovered = false,
+    atlas = 'Consumables',
+    set = 'traits',
+    pos = { x = 2, y = 1 },
+    use = function(self, card, area, copier)
+        for i = 1, G.GAME.current_round.hands_played do
+           draw_card(G.deck, G.hand, 90, 'up', false)
+        end
+    end,
+    can_use = function(self, card)
+        return G.consumeables and G.GAME.current_round.hands_played > 0
+    end
+}
+
+SMODS.Consumable {
+    key = 'recombination',
+    loc_txt = {
+        name = "Recombination",
+        text = {
+            "Add +1 to mult per Enhanced card held, up to +10",
+            "{C:inactive}(Can’t be used, triggers automatically, self destructs after triggering){}"
+        }
+    },
+    atlas = 'Consumables',
+    set = 'traits',
+    pos = { x = 2, y = 1 },
+    discovered = false,
+    calculate = function (self, card, context)
+        local amount = 0
+        if context.joker_main then
+            for _, handCard in ipairs(G.hand.cards) do
+                if handCard.ability.set == "Enhanced" then
+                    amount = amount + 1
+                end
+            end
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.5,
+                func = function()
+                    card:start_dissolve()
+                    return true
+                end
+            }))
+            return {
+                mult = amount
+            }
+        end   
+    end
+}
+
+SMODS.Consumable {
+    key = 'wewind_wounds',
+    loc_txt = {
+        name = "Rewind Rounds",
+        text = {
+            "Draw a random card from the",
+            "last played hand"
+        }
+    },
+    atlas = 'Consumables',
+    set = 'traits',
+    discovered = false,
+    pos = { x = 2, y = 1 },
+    config = {
+        extra = {
+            last_round_cards = {}
+        }
+    },
+    calculate = function (self, card, context)
+        if context.before then
+            card.ability.extra.last_round_cards = {}
+        end
+        if context.joker_main then
+            for i, scoredCard in ipairs(context.scoring_hand) do
+                table.insert(card.ability.extra.last_round_cards, scoredCard)
+            end
+        end   
+    end,
+    use = function(self, card, area, copier)
+        local i = pseudorandom("card", 1, #card.ability.extra.last_round_cards)
+        CArd = card.ability.extra.last_round_cards[i]
+
+        for i, _ in ipairs(G.discard.cards) do
+            if G.discard.cards[i] == CArd then
+                draw_card(G.discard, G.hand, 90, 'up', nil, CArd)
+                table.remove(card.ability.extra.last_round_cards, i)
+            end
+        end
+    end,
+    can_use = function(self, card)
+        return G.consumeables and G.GAME.blind.in_blind and #(card.ability.extra.last_round_cards) >= 1
+    end
+
+}
+
+SMODS.Consumable {
+    key = 'precision_instrument',
+    loc_txt = {
+        name = "Precision Instrument",
+        text = {
+            "Scoring at least one Ace per hand",
+            "will grant this card +10 Mult (limit +100).",
+            "Self destructs when a hand is played with no Aces in it",
+            "{C:inactive}(Currently #1#){}"
+        }
+    },
+    atlas = 'Consumables',
+    discovered = false,
+    set = 'traits',
+    pos = { x = 2, y = 1 },
+    config = {
+        extra = {
+            mult = 0,
+            containsAce = false
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult or 0 } }
+    end,
+    calculate = function (self, card, context)
+        if context.joker_main then
+            card.ability.extra.containsAce = false
+            for i, scoredCard in ipairs(context.scoring_hand) do
+                if scoredCard.base.value == "Ace" then
+                    card.ability.extra.containsAce = true
+                end
+            end
+            if card.ability.extra.containsAce == false then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.5,
+                    func = function()
+                        card:start_dissolve()
+                        return true
+                    end
+                }))
+            else
+                if card.ability.extra.mult < 100 then
+                card.ability.extra.mult = card.ability.extra.mult + 10
+                end
+                return {
+                    mult = card.ability.extra.mult
+                }
+            end
+        end  
+    end
+}
+
+SMODS.Consumable {
     key = 'destabilizing_rounds',
     loc_txt = {
         name = "Destabilizing Rounds",
@@ -159,6 +320,7 @@ SMODS.Consumable {
     },
     atlas = 'Consumables',
     set = 'traits',
+    discovered = false,
     pos = { x = 8, y = 0 },
     use = function(self, card, area, copier)
 
@@ -196,6 +358,7 @@ SMODS.Consumable {
         }
     },
     atlas = 'Consumables',
+    discovered = false,
     set = 'traits',
     pos = { x = 9, y = 0 },
     use = function(self, card, area, copier)
@@ -213,25 +376,39 @@ SMODS.Consumable {
     end
 }
 
---[[ SMODS.Consumable {
+SMODS.Consumable {
     key = 'souldrinker',
     loc_txt = {
         name = "Souldrinker",
         text = {
             "Grant +1 hand per every two cards scored last hand",
-            "(max: 2, currently: x)"
+            "{C:inactive}(Currently: #1#){}"
         }
     },
     atlas = 'Consumables',
+    discovered = false,
     set = 'traits',
     pos = { x = 0, y = 1 },
+    config = {
+        extra = {
+            souls = 0
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.souls or 0 } }
+    end,
+    calculate = function(self, card, context)
+        if context.final_scoring_step then
+            card.ability.extra.souls = math.ceil(#G.play.cards/2)
+        end
+    end,
     use = function(self, card, area, copier)
-
+        ease_hands_played(card.ability.extra.souls)
     end,
     can_use = function(self, card)
         return G.consumeables and G.GAME.blind.in_blind
     end
-} ]]
+}
 
 SMODS.Consumable {
     key = 'ambush',
@@ -245,6 +422,7 @@ SMODS.Consumable {
         }
     },
     atlas = 'Consumables',
+    discovered = false,
     set = 'traits',
     pos = { x = 1, y = 1 },
     use = function(self, card, area, copier)
@@ -283,6 +461,7 @@ SMODS.Consumable {
             "of hand size gained this way"
         }
     },
+    discovered = false,
     atlas = 'Consumables',
     set = 'traits',
     pos = { x = 2, y = 1 },
@@ -320,6 +499,7 @@ SMODS.Consumable {
         }
     },
     atlas = 'Consumables',
+    discovered = false,
     set = 'traits',
     pos = { x = 2, y = 0 },
     use = function(self, card, area, copier)
@@ -363,6 +543,7 @@ SMODS.Consumable {
         }
     },
     atlas = 'Consumables',
+    discovered = false,
     set = 'traits',
     pos = { x = 3, y = 1 },
     use = function(self, card, area, copier)
@@ -395,6 +576,7 @@ SMODS.Sticker {
         traits = false
     },
     atlas = "Stickers",
+    discovered = false,
     pos = {x = 3, y = 0},
     calculate = function(self, card, context)
         
@@ -439,6 +621,7 @@ SMODS.Consumable {
             "after not playing them for one hand"
         }
     },
+    discovered = false,
     atlas = 'Consumables',
     set = 'traits',
     pos = { x = 5, y = 0 },
