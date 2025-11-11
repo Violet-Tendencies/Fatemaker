@@ -1,6 +1,6 @@
 SMODS.Gradient({
     key = "fm_resonance_hue",
-    colours = {HEX("#fde15d"), HEX("#af2314")},
+    colours = {HEX("fde15d"), HEX("af2314")},
     cycle = 2,
     interpolation = "linear"
 })
