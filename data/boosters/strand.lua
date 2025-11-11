@@ -1,22 +1,15 @@
-SMODS.Gradient({
-    key = "fm_resonance_hue",
-    colours = {HEX("#fde15d"), HEX("#af2314")},
-    cycle = 2,
-    interpolation = "linear"
-})
-
 SMODS.Booster({
-    key = "resonance",
+    key = "strand",
     loc_txt = {
-        name = "Resonance Pack",
+        name = "Strand Pack",
         text = {
             "Choose 1 of up to",
-            "3 {C:fm_resonance_hue}Resonance{} cards to add",
+            "3 {C:green}Strand{} cards to add",
             "to your deck",
             "Small chance for",
             "{C:dark_edition}Transcendent{} cards to spawn"
         },
-        group_name = "Resonance Pack"
+        group_name = "Strand Pack"
     },
     atlas = "Boosters",
     pos = { x = 0, y = 0 },
@@ -24,10 +17,10 @@ SMODS.Booster({
     weight = 1,
     config = { extra = 3, choose = 1 },
     ease_background_colour = function(self)
-        ease_background_colour({ new_colour = G.C.ORANGE, special_colour = G.C.BLACK, contrast = 2 })
+        ease_background_colour({ new_colour = G.C.GREEN, special_colour = G.C.BLACK, contrast = 2 })
     end,
     create_card = function(self, card, i)
-        local rng = pseudorandom('resonance_pack')
+        local rng = pseudorandom('strand_pack')
         local card_config
         if rng > 0.9 then
             card_config = {
@@ -38,13 +31,13 @@ SMODS.Booster({
                 enhancement = "m_fm_transcendent"
             }
         else
-            local resonance_enhancements = {
+            local strand_enhancements = {
                 "m_fm_wovenmail",
                 "m_fm_tangle",
                 "m_fm_unravel",
                 "m_fm_suspend"
             }
-            local selected_enhancement = pseudorandom_element(resonance_enhancements, pseudoseed('resonance_enhancement'))
+            local selected_enhancement = pseudorandom_element(strand_enhancements, pseudoseed('strand_enhancement'))
             
             card_config = {
                 set = "Enhanced", 
@@ -70,17 +63,17 @@ SMODS.Booster({
 })
 
 SMODS.Booster({
-    key = "jumbo_resonance",
+    key = "jumbo_strand",
     loc_txt = {
-        name = "Jumbo Resonance Pack",
+        name = "Jumbo Strand Pack",
         text = {
             "Choose 1 of up to",
-            "5 {C:fm_resonance_hue}Resonance{} cards to add",
+            "5 {C:green}Strand{} cards to add",
             "to your deck",
             "Small chance for",
             "{C:dark_edition}Transcendent{} cards to spawn"
         },
-        group_name = "Resonance Pack"
+        group_name = "Strand Pack"
     },
     atlas = "Boosters",
     pos = { x = 1, y = 0 },
@@ -88,7 +81,7 @@ SMODS.Booster({
     weight = 1,
     config = { extra = 5, choose = 1 },
     ease_background_colour = function(self)
-        ease_background_colour({ new_colour = G.C.ORANGE, special_colour = G.C.BLACK, contrast = 2 })
+        ease_background_colour({ new_colour = G.C.GREEN, special_colour = G.C.BLACK, contrast = 2 })
     end,
     particles = function(self)
         G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
@@ -99,14 +92,14 @@ SMODS.Booster({
             speed = 1.1,
             padding = -1,
             attach = G.ROOM_ATTACH,
-            colours = { G.C.BLACK, lighten(G.C.ORANGE, 0.4), lighten(G.C.ORANGE, 0.2), lighten(G.C.BLACK, 0.2) },
+            colours = { G.C.BLACK, lighten(G.C.GREEN, 0.4), lighten(G.C.GREEN, 0.2), lighten(G.C.BLACK, 0.2) },
             fill = true
         })
         G.booster_pack_sparkles.fade_alpha = 1
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        local rng = pseudorandom('jumbo_resonance_pack')
+        local rng = pseudorandom('jumbo_strand_pack')
         local card_config
         if rng > 0.9 then
             card_config = {
@@ -117,13 +110,13 @@ SMODS.Booster({
                 enhancement = "m_fm_transcendent"
             }
         else
-            local resonance_enhancements = {
+            local strand_enhancements = {
                 "m_fm_wovenmail", 
                 "m_fm_tangle",
                 "m_fm_unravel",
                 "m_fm_suspend"
             }
-            local selected_enhancement = pseudorandom_element(resonance_enhancements, pseudoseed('resonance_enhancement'))
+            local selected_enhancement = pseudorandom_element(strand_enhancements, pseudoseed('strand_enhancement'))
             
             card_config = {
                 set = "Enhanced", 
@@ -149,17 +142,17 @@ SMODS.Booster({
 })
 
 SMODS.Booster({
-    key = "mega_resonance",
+    key = "mega_strand",
     loc_txt = {
-        name = "Mega Resonance Pack",
+        name = "Mega Strand Pack",
         text = {
             "Choose 2 of up to",
-            "5 {C:fm_resonance_hue}Resonance{} cards to add",
+            "5 {C:green}Strand{} cards to add",
             "to your deck",
             "Small chance for",
             "{C:dark_edition}Transcendent{} cards to spawn"
         },
-        group_name = "Resonance Pack"
+        group_name = "Strand Pack"
     },
     atlas = "Boosters",
     pos = { x = 2, y = 0 },
@@ -167,7 +160,7 @@ SMODS.Booster({
     weight = 1,
     config = { extra = 5, choose = 2 },
     ease_background_colour = function(self)
-        ease_background_colour({ new_colour = G.C.ORANGE, special_colour = G.C.BLACK, contrast = 2 })
+        ease_background_colour({ new_colour = G.C.GREEN, special_colour = G.C.BLACK, contrast = 2 })
     end,
     particles = function(self)
         G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
@@ -178,14 +171,14 @@ SMODS.Booster({
             speed = 1.5,
             padding = -1,
             attach = G.ROOM_ATTACH,
-            colours = { G.C.BLACK, lighten(G.C.ORANGE, 0.4), lighten(G.C.ORANGE, 0.2), lighten(G.C.BLACK, 0.2) },
+            colours = { G.C.BLACK, lighten(G.C.GREEN, 0.4), lighten(G.C.GREEN, 0.2), lighten(G.C.BLACK, 0.2) },
             fill = true
         })
         G.booster_pack_sparkles.fade_alpha = 1
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        local rng = pseudorandom('mega_resonance_pack')
+        local rng = pseudorandom('mega_strand_pack')
         local card_config
         if rng > 0.9 then
             card_config = {
@@ -196,13 +189,13 @@ SMODS.Booster({
                 enhancement = "m_fm_transcendent"
             }
         else
-            local resonance_enhancements = {
-                "m_fm_wovenmail", -- Resonance
+            local strand_enhancements = {
+                "m_fm_wovenmail", -- Strand
                 "m_fm_tangle",
                 "m_fm_unravel",
                 "m_fm_suspend"
             }
-            local selected_enhancement = pseudorandom_element(resonance_enhancements, pseudoseed('resonance_enhancement'))
+            local selected_enhancement = pseudorandom_element(strand_enhancements, pseudoseed('strand_enhancement'))
             
             card_config = {
                 set = "Enhanced",
