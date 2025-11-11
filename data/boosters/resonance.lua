@@ -5,6 +5,13 @@ SMODS.Gradient({
     interpolation = "linear"
 })
 
+SMODS.Gradient({
+    key = "fm_reverse_resonance_hue",
+    colours = {HEX("af2314"), HEX("fde15d")},
+    cycle = 2,
+    interpolation = "linear"
+})
+
 SMODS.Booster({
     key = "resonance",
     loc_txt = {

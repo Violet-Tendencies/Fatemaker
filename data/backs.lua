@@ -1,12 +1,10 @@
 SMODS.Back {
     key = "deck_solar",
     loc_txt = {
-        name = "Solar Deck",
+        name = "{C:attention}Solar{} Deck",
         text = {
-            'You wield the duality of the',
-            'life-giving fire of our Sun;',
-            "to scorch and to heal,",
-            "to burn and to cauterize."
+            "To {C:attention}scorch{} and to heal,",
+            "to {C:attention}burn{} and to cauterize."
         }
     },
     pos = { x = 1, y = 3 },
@@ -15,7 +13,7 @@ SMODS.Back {
         local tf = {
             true,
             true,
-            true,
+            false,
             false
         }
         local enhancements = {
@@ -39,12 +37,11 @@ SMODS.Back {
 SMODS.Back {
     key = "deck_void",
     loc_txt = {
-        name = "Void Deck",
+        name = "{C:purple}Void{} Deck",
         text = {
-            "You ventured to the deepest depths",
-            "of the Void and asked a question;",
-            "the answer is as clear as",
-            "the secrets of the universe."
+            "The {C:purple}darkest{} reaches,",
+            "the {C:purple}deepest{} depths;",
+            "Knowledge as boundless as power.",
         }
     },
     pos = { x = 1, y = 3 },
@@ -53,7 +50,7 @@ SMODS.Back {
         local tf = {
             true,
             true,
-            true,
+            false,
             false
         }
         local enhancements = {
@@ -77,12 +74,10 @@ SMODS.Back {
 SMODS.Back {
     key = "deck_arc",
     loc_txt = {
-        name = "Arc Deck",
+        name = "{C:blue}Arc{} Deck",
         text = {
-            'You leave a bold',
-            'statement in your wake;',
-            'A spark of chaos shining',
-            'in just an arm\'s reach.'
+            'A {C:blue}spark{} of {C:blue}chaos{}, shining;',
+            'Open your mind and hear it sing.'
         }
     },
     pos = { x = 1, y = 3 },
@@ -91,7 +86,7 @@ SMODS.Back {
         local tf = {
             true,
             true,
-            true,
+            false,
             false
         }
         local enhancements = {
@@ -115,11 +110,10 @@ SMODS.Back {
 SMODS.Back {
     key = "deck_stasis",
     loc_txt = {
-        name = "Stasis Deck",
+        name = "{C:spades}Stasis{} Deck",
         text = {
-            'The coldest reaches of your mind;',
-            'you are steeled against the',
-            'temptations of the Dark, unwavering.'
+            'The {C:spades}coldest{} reaches of your mind;',
+            "The {C:spades}tundra{} that will {C:spades}freeze{} all."
         }
     },
     pos = { x = 1, y = 3 },
@@ -128,7 +122,7 @@ SMODS.Back {
         local tf = {
             true,
             true,
-            true,
+            false,
             false
         }
         local enhancements = {
@@ -154,11 +148,8 @@ SMODS.Back {
     loc_txt = {
         name = "Strand Deck",
         text = {
-            'The minds of every iota',
-            'of being sing to you;',
-            'and you will wield it',
-            'so, with it weaving and',
-            'dancing through your fingers.'
+            "The {C:green}web{} is made, the {C:green}bait{} is laid.",
+            "Catch all within, make yourself known."
         }
     },
     pos = { x = 1, y = 3 },
@@ -191,12 +182,10 @@ SMODS.Back {
 SMODS.Back {
     key = "deck_resonant",
     loc_txt = {
-        name = "Resonance Deck",
+        name = "{C:fm_resonance_hue}Resonance{} Deck",
         text = {
-            "You wear a commanding presence",
-            "like a cloak; you will bring",
-            "about unbound subjugation and",
-            "domination for all to witness."
+            "\"{C:fm_resonance_hue}Subjugation{} or {C:fm_reverse_resonance_hue}Liberation{}?\"",
+            "You have chosen both."
         }
     },
     pos = { x = 1, y = 3 },
@@ -205,7 +194,7 @@ SMODS.Back {
         local tf = {
             true,
             true,
-            true,
+            false,
             false
         }
         local enhancements = {
@@ -231,10 +220,10 @@ SMODS.Back {
     loc_txt = {
         name = "Prismatic Deck",
         text = {
-            "You have braved the temptations of the",
-            "Dark and the chaos of the Light;",
-            "your greatness have been made known",
-            "by gods of the Sky and the Deep."
+            "Having braved the temptations of the",
+            "{C:dark_edition}Dark{} and the chaos of the {C:edition}Light{};",
+            "your greatness is now known by gods",
+            "of the Sky and the Deep."
         }
     },
     pos = { x = 1, y = 3 },
