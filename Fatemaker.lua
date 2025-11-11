@@ -37,7 +37,6 @@ assert(SMODS.load_file("data/blinds/corrupted_wish.lua"))()
 assert(SMODS.load_file("data/blinds/machine_garden.lua"))()
 assert(SMODS.load_file("data/blinds/fallen_crypt.lua"))()
 assert(SMODS.load_file("data/blinds/reshaped_edge.lua"))()
-assert(SMODS.load_file("data/ui.lua"))()
 assert(SMODS.load_file("data/mechanics.lua"))()
 ----------------------------------------------
 ------------MOD CODE END----------------------
