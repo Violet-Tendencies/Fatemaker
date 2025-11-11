@@ -221,7 +221,7 @@ SMODS.Back {
         name = "Prismatic Deck",
         text = {
             "Having braved the temptations of the",
-            "{C:dark_edition}Dark{} and the chaos of the {C:edition}Light{};",
+            "Dark and the chaos of the Light;",
             "your greatness is now known by gods",
             "of the Sky and the Deep."
         }
