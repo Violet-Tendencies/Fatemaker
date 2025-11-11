@@ -4,7 +4,7 @@ SMODS.Enhancement {
     loc_txt = {
         name = "Resonant",
         text = {
-            "RESONANCE",
+            "{C:fm_resonance_hue}RESONANCE{}",
             "When scored, gain {X:mult,C:white}X0.5{}",
             "Mult for each {C:attention}debuffed{} or {C:attention}Catatonic{}",
             "card in hand"
@@ -41,7 +41,7 @@ SMODS.Enhancement {
     loc_txt = {
         name = "Finalized",
         text = {
-            "RESONANCE",
+            "{C:fm_resonance_hue}RESONANCE{}",
             "Has a {C:green}#1# in #2#{} chance to convert 3",
             "random cards in hand to this",
             "card's suit when scored"
@@ -94,7 +94,7 @@ SMODS.Enhancement {
     loc_txt = {
         name = "Dissected",
         text = {
-            "RESONANCE",
+            "{C:fm_resonance_hue}RESONANCE{}",
             "When scored, randomizes rank and suit and",
             "then gains {C:attention}double{} the chips",
             "If the new rank is higher",
@@ -164,7 +164,7 @@ SMODS.Enhancement {
     loc_txt = {
         name = "Rooted",
         text = {
-            "RESONANCE",
+            "{C:fm_resonance_hue}RESONANCE{}",
             "Each turn in hand, gain {C:blue}+20{} Chips",
             "Decrements in rank each turn in hand",
             "Becomes Catatonic when rank reaches 2",
